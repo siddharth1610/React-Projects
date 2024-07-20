@@ -16,9 +16,16 @@ const Body = () => {
     //console.log(search);
     let filterData = rest1.filter((reslist) =>
       reslist?.data?.name?.toLowerCase().includes(search.toLowerCase())
-    );
+    
+  );
     return filterData;
   }
+
+//   function filterData(search, rest1) {
+//     return  rest1.filter((reslist) =>
+//       reslist?.data?.name?.toLowerCase().includes(search.toLowerCase())
+//   );
+//   }
 
   return (
     <>
