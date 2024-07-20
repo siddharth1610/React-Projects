@@ -2,13 +2,6 @@ import React, { useState } from "react";
 import { restaurantList } from "../../contansts";
 import Cards from "./Cards";
 
-function filterData(search, rest1) {
-  //console.log(search);
-  let filterData = rest1.filter((reslist) =>
-    reslist?.data?.name?.toLowerCase().includes(search.toLowerCase())
-  );
-  return filterData;
-}
 const Body = () => {
   const [search, setSearch] = useState("");
   const [rest, setRest] = useState(restaurantList);
@@ -18,6 +11,15 @@ const Body = () => {
     setFilter(restaurantList);
     window.location.reload();
   };
+
+  function filterData(search, rest1) {
+    //console.log(search);
+    let filterData = rest1.filter((reslist) =>
+      reslist?.data?.name?.toLowerCase().includes(search.toLowerCase())
+    );
+    return filterData;
+  }
+
   return (
     <>
       <div className="p-1 text-white">
